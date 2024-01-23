@@ -1,0 +1,2 @@
+# This file is not necessary for the Node.js and React application.
+# It is included here to satisfy the request for a requirements.txt file.
