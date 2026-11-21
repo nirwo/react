@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emberwake Idle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Emberwake <span>Idle</span></h1>
+    <div class="gold" title="Gold"><i></i><b id="gold">0</b></div>
+    <div class="spacer"></div>
+    <div class="seg" id="speed" role="group" aria-label="Game speed">
+      <button data-speed="0">Pause</button>
+      <button data-speed="1" class="on">1×</button>
+      <button data-speed="2">2×</button>
+      <button data-speed="4">4×</button>
+    </div>
+    <button id="reset" class="ghost">Reset</button>
+  </header>
+
+  <main>
+    <section class="stage">
+      <div class="brain">
+        <button id="auto" class="toggle" aria-pressed="true">Autopilot</button>
+        <label>Focus
+          <select id="focus"></select>
+        </label>
+        <p id="thought" aria-live="polite"></p>
+      </div>
+      <div class="map">
+        <canvas id="world"></canvas>
+        <div id="tip" hidden></div>
+      </div>
+      <p class="hint">The hero plays on their own. Click a tree, vein, shoal or monster to take over; switch Autopilot back on to hand control back.</p>
+      <ul id="log" aria-label="Event log"></ul>
+    </section>
+
+    <aside>
+      <section>
+        <h2>Hero</h2>
+        <div class="meter hp"><span id="hpbar"></span><em id="hptext"></em></div>
+        <div class="chips" id="gear"></div>
+        <div class="chips" id="carry"></div>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <div id="skills"></div>
+      </section>
+      <section>
+        <h2>Workshop <small>needs the autopilot off</small></h2>
+        <div id="recipes" class="list"></div>
+      </section>
+      <section>
+        <h2>Stash <button id="sell" class="mini">Sell surplus</button></h2>
+        <div id="stash" class="chips"></div>
+      </section>
+      <section>
+        <h2>Upgrades</h2>
+        <div id="upgrades" class="list"></div>
+      </section>
+    </aside>
+  </main>
+
+  <dialog id="away">
+    <h2>While you were away</h2>
+    <div id="awayBody"></div>
+    <form method="dialog"><button>Carry on</button></form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="sim.js"></script>
+  <script src="render.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
